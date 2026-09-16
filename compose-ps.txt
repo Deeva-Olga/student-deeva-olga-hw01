@@ -1,0 +1,2 @@
+NAMES             STATUS             PORTS
+minio-lakehouse   Up About an hour   127.0.0.1:9000-9001->9000-9001/tcp

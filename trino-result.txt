@@ -1,0 +1,101 @@
+26/09/16 09:14:00 WARN Utils: Your hostname, MSI resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+26/09/16 09:14:00 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+:: loading settings :: url = jar:file:/home/deeva/lakehouse-hw1/venv/lib/python3.12/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /home/deeva/.ivy2/cache
+The jars for the packages stored in: /home/deeva/.ivy2/jars
+org.apache.iceberg#iceberg-spark-runtime-3.5_2.12 added as a dependency
+org.apache.hadoop#hadoop-aws added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-73597bff-76ca-4fa0-abcc-db135af9d61a;1.0
+	confs: [default]
+	found org.apache.iceberg#iceberg-spark-runtime-3.5_2.12;1.4.1 in central
+	found org.apache.hadoop#hadoop-aws;3.3.4 in central
+	found com.amazonaws#aws-java-sdk-bundle;1.12.262 in central
+	found org.wildfly.openssl#wildfly-openssl;1.0.7.Final in central
+:: resolution report :: resolve 177ms :: artifacts dl 5ms
+	:: modules in use:
+	com.amazonaws#aws-java-sdk-bundle;1.12.262 from central in [default]
+	org.apache.hadoop#hadoop-aws;3.3.4 from central in [default]
+	org.apache.iceberg#iceberg-spark-runtime-3.5_2.12;1.4.1 from central in [default]
+	org.wildfly.openssl#wildfly-openssl;1.0.7.Final from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   4   |   0   |   0   |   0   ||   4   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-73597bff-76ca-4fa0-abcc-db135af9d61a
+	confs: [default]
+	0 artifacts copied, 4 already retrieved (0kB/6ms)
+26/09/16 09:14:00 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/09/16 09:14:04 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+[Stage 0:>                                                          (0 + 1) / 1]                                                                                ============================================================
+1. АНАЛИТИЧЕСКИЙ ЗАПРОС (Trino/Spark эквивалент с DECIMAL)
+============================================================
++-----------------------------+--------------------+----------+
+|member_casual                |avg_duration_minutes|trip_count|
++-----------------------------+--------------------+----------+
+|member                       |10.06               |150263    |
+|casual                       |13.70               |39920     |
+|University Ave & 57th St     |5.52                |2107      |
+|Ellis Ave & 60th St          |5.56                |2078      |
+|Clinton St & Washington Blvd |8.42                |1719      |
+|Kingsbury St & Kinzie St     |7.50                |1527      |
+|Ellis Ave & 55th St          |5.63                |1445      |
+|State St & Chicago Ave       |11.91               |1397      |
+|Clark St & Elm St            |10.30               |1381      |
+|Clinton St & Madison St      |8.80                |1350      |
+|Canal St & Adams St          |9.38                |1323      |
+|Clinton St & Jackson Blvd    |9.61                |1151      |
+|Wells St & Elm St            |7.99                |1128      |
+|Wells St & Concord Ln        |9.35                |1109      |
+|Larrabee St & Kingsbury St   |7.41                |1091      |
+|Loomis St & Lexington St     |8.45                |1049      |
+|St. Clair St & Erie St       |11.40               |1035      |
+|Sheffield Ave & Fullerton Ave|7.14                |1033      |
+|Dearborn St & Erie St        |10.08               |1001      |
+|Wells St & Huron St          |10.08               |982       |
++-----------------------------+--------------------+----------+
+only showing top 20 rows
+
+============================================================
+2. ПРОВЕРКА ИСТОРИИ SNAPSHOTS (синтаксис Trino)
+============================================================
++-------------------+-----------------------+
+|snapshot_id        |committed_at           |
++-------------------+-----------------------+
+|4312411029804801850|2026-09-16 08:41:28.702|
+|4355128171403697123|2026-09-16 08:33:05.397|
++-------------------+-----------------------+
+
+============================================================
+3. ФЕДЕРАТИВНЫЙ JOIN (эмуляция каталога memory через TempView)
+============================================================
++----------------------------------+-----------------------------+-----------+
+|client_type_description           |raw_code                     |total_trips|
++----------------------------------+-----------------------------+-----------+
+|Годовой подписчик Divvy           |member                       |150263     |
+|Разовый пользователь (24h/3h pass)|casual                       |39920      |
+|Не сопоставлен                    |NULL                         |27727      |
+|Не сопоставлен                    |University Ave & 57th St     |2107       |
+|Не сопоставлен                    |Ellis Ave & 60th St          |2078       |
+|Не сопоставлен                    |Clinton St & Washington Blvd |1719       |
+|Не сопоставлен                    |Kingsbury St & Kinzie St     |1527       |
+|Не сопоставлен                    |Ellis Ave & 55th St          |1445       |
+|Не сопоставлен                    |State St & Chicago Ave       |1397       |
+|Не сопоставлен                    |Clark St & Elm St            |1381       |
+|Не сопоставлен                    |Clinton St & Madison St      |1350       |
+|Не сопоставлен                    |Canal St & Adams St          |1323       |
+|Не сопоставлен                    |Clinton St & Jackson Blvd    |1151       |
+|Не сопоставлен                    |Wells St & Elm St            |1128       |
+|Не сопоставлен                    |Wells St & Concord Ln        |1109       |
+|Не сопоставлен                    |Larrabee St & Kingsbury St   |1091       |
+|Не сопоставлен                    |Loomis St & Lexington St     |1049       |
+|Не сопоставлен                    |St. Clair St & Erie St       |1035       |
+|Не сопоставлен                    |Sheffield Ave & Fullerton Ave|1033       |
+|Не сопоставлен                    |Dearborn St & Erie St        |1001       |
++----------------------------------+-----------------------------+-----------+
+only showing top 20 rows
+
+Все SQL-запросы успешно выполнены.

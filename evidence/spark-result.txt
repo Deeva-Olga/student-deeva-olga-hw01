@@ -29,7 +29,11 @@ org.apache.hadoop#hadoop-aws added as a dependency
 26/09/16 09:13:43 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 Setting default log level to "WARN".
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
-[Stage 0:>                                                        (0 + 10) / 10]                                                                                26/09/16 09:13:50 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
+
+[Stage 0:>                                                        (0 + 10) / 10]
+
+                                                                                
+26/09/16 09:13:50 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
 26/09/16 09:13:51 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
 26/09/16 09:13:51 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
 26/09/16 09:13:51 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
@@ -41,7 +45,10 @@ To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLeve
 26/09/16 09:13:51 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
 26/09/16 09:13:51 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
 26/09/16 09:13:51 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
-[Stage 9:=============================>                            (5 + 5) / 10]                                                                                26/09/16 09:13:52 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
+
+[Stage 9:=============================>                            (5 + 5) / 10]
+
+                                                                                
 26/09/16 09:13:52 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
 26/09/16 09:13:52 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
 26/09/16 09:13:52 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
@@ -52,7 +59,16 @@ To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLeve
 26/09/16 09:13:52 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
 26/09/16 09:13:52 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
 26/09/16 09:13:52 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
-[Stage 10:=====>                                                   (1 + 9) / 10][Stage 10:===========>                                             (2 + 8) / 10]                                                                                [Stage 11:>                                                       (0 + 10) / 10]26/09/16 09:13:55 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+26/09/16 09:13:52 WARN AbstractS3ACommitterFactory: Using standard FileOutputCommitter to commit work. This is slow and potentially unsafe.
+
+[Stage 10:=====>                                                   (1 + 9) / 10]
+
+[Stage 10:===========>                                             (2 + 8) / 10]
+
+                                                                                
+
+[Stage 11:>                                                       (0 + 10) / 10]
+26/09/16 09:13:55 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 95.00% for 8 writers
 26/09/16 09:13:55 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 84.44% for 9 writers
@@ -62,7 +78,11 @@ Scaling row group sizes to 76.00% for 10 writers
 Scaling row group sizes to 84.44% for 9 writers
 26/09/16 09:13:55 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
 Scaling row group sizes to 95.00% for 8 writers
-[Stage 11:=====>                                                   (1 + 9) / 10]                                                                                1. Читаем raw-данные с ПОЛНОЙ явной схемой...
+
+[Stage 11:=====>                                                   (1 + 9) / 10]
+
+                                                                                
+1. Читаем raw-данные с ПОЛНОЙ явной схемой...
 Всего: 190302, Принято: 190183, Отклонено: 119. Сумма совпадает: True
 5. Замер производительности (GroupBy count)...
 Время агрегации CSV:  0.5585 сек

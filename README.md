@@ -56,15 +56,27 @@ python run_queries.py
 
 ###  Структура репозитория
 student-01-h01/
+
 ├── README.md            # Этот файл
+
 ├── report.md            # Паспорт источника, таблица замеров, архитектурные выводы
+
 ├── schema.md            # Описание полей, типов данных и правил nullable
+
 ├── pipeline.py          # Основной скрипт: загрузка, DQ, Parquet, 2x Iceberg INSERT
+
 ├── run_queries.py       # Скрипт валидации SQL-запросов (эмуляция Trino)
+
 ├── queries.sql          # SQL-код аналитического и федеративного (LEFT JOIN) запросов
+
 ├── .gitignore           # Правила исключения мусора и секретов из Git
+
 └── evidence/            # Текстовые доказательства выполнения (логи, листинги)
+
     ├── compose-ps.txt
+    
     ├── object-listing.txt
+    
     ├── spark-result.txt
+    
     └── trino-result.txt

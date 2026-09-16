@@ -30,7 +30,11 @@ org.apache.hadoop#hadoop-aws added as a dependency
 Setting default log level to "WARN".
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
 26/09/16 09:14:04 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
-[Stage 0:>                                                          (0 + 1) / 1]                                                                                ============================================================
+
+[Stage 0:>                                                          (0 + 1) / 1]
+
+                                                                                
+============================================================
 1. АНАЛИТИЧЕСКИЙ ЗАПРОС (Trino/Spark эквивалент с DECIMAL)
 ============================================================
 +-----------------------------+--------------------+----------+
